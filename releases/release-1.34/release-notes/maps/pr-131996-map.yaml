@@ -6,5 +6,5 @@ releasenote:
     linking directly to the master branch. This ensures that links reference a
     specific point in time, rather than a document that may change over time.
 
-    See here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files
+    See here for guidance on getting permanent links to files: https://help.github.com/en/articles/getting-permanent-links-to-files.
 pr_body: ""
