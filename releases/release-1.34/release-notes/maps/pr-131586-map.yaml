@@ -1,4 +1,4 @@
 pr: 131586
 releasenote:
-  text: Enabled completion for aliases defined in kubectlrc.
+  text: 'Enabled completion for aliases defined in `kubectlrc`.'
 pr_body: ""
