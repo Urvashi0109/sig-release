@@ -1,6 +1,6 @@
 pr: 131300
 releasenote:
-  text: kube-apiserver - Promoted the `ExternalServiceAccountTokenSigner` feature
+  text: 'kube-apiserver: Promoted the `ExternalServiceAccountTokenSigner` feature
     to beta, which enabled external signing of service account tokens and fetching
     of public verifying keys. This was accomplished by enabling the beta `ExternalServiceAccountTokenSigner`
     feature gate and specifying the `--service-account-signing-endpoint` flag. The
