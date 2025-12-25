@@ -78,9 +78,11 @@
 
 ## Overview
 
+This timeline provides a week-by-week breakdown of Docs team responsibilities throughout the Kubernetes release cycle. Each phase includes specific tasks, deadlines, and checklists.
+
 For each release, the schedule with deliverables is added to the release directory. This section talks about specific Docs Lead deliverables for each milestone in the release timeline.
 
-Read the release timeline and **make sure the timeline includes deadlines for documentation work**, e.g: [1.21 timeline](https://github.com/kubernetes/sig-release/tree/master/releases/release-1.21#timeline):
+Read the release timeline and **make sure the timeline includes deadlines for documentation work**, e.g: [1.35 timeline](https://github.com/kubernetes/sig-release/tree/master/releases/release-1.35#timeline):
 
 - Docs deadline - Reminder for *Open placeholder PRs* in the respective KEPs (~3.5 weeks before release)
 - Docs deadline - Reminder for *PRs ready for review* in the respective KEPs (~2 weeks before release)
@@ -100,188 +102,186 @@ Responsibilities of the Docs Team:
 > Be aware that several linked, example PRs uses the `master` branch.
 > For the end-of-year release, KubeCon NA and the US Thanksgiving holiday can be additional impediments to Docs-related deadlines. Please communicate to enhancement owners/contributors about upcoming deadlines earlier and more frequently.
 
-## Early Steps (Weeks 1-2)
-These steps take approximately one hour to complete, and should be completed immediately.
+---
 
-### Connect with the release team through Slack and Google Groups
+## Phase 1: Early Steps (Weeks 1-2)
 
-- Join the Kubernetes [#sig-release](https://kubernetes.slack.com/messages/sig-release) Slack channel. Introduce yourself as the Docs Lead for the [future release].
+**Time Required:** ~1-2 hours total for initial setup
 
-- Send a Slack direct message to the [future release] lead to introduce yourself.
+### 1.1 Connect with Release Team
 
-- ⚠️  Join these Google groups:
-    - [kubernetes-sig-release](https://groups.google.com/forum/#!forum/kubernetes-sig-release)
-    - [kubernetes-sig-docs](https://groups.google.com/forum/#!forum/kubernetes-sig-docs)
-    - [kubernetes-dev](https://groups.google.com/a/kubernetes.io/g/dev)
-    - [kubernetes-release-team](https://groups.google.com/a/kubernetes.io/g/release-team)
-        - ⚠️  List of members for this group is managed in git. Please create a PR against `kuberenetes/sig-release` repo to include your email under `release-team` group in [`sig-release/group.yaml`](https://github.com/kubernetes/k8s.io/blob/main/groups/sig-release/groups.yaml) 
-    - [kubernetes-release-team-shadows](https://groups.google.com/a/kubernetes.io/g/release-team-shadows)
-        - ⚠️  List of members for this group is managed in git. Please create a PR against `kuberenetes/sig-release` repo to include your email under `release-team-shadows` group in [`sig-release/group.yaml`](https://github.com/kubernetes/k8s.io/blob/main/groups/sig-release/groups.yaml)
+#### Getting Started
 
-Early in the release cycle, the Enhancements Lead opens a Github Project, e.g: [the 1.26 Enhancement Tracking](https://github.com/orgs/kubernetes/projects/98/views/1). Later in the release this spreadsheet will contain important information for docs, check the Docs view [here](https://github.com/orgs/kubernetes/projects/98/views/6):
+- [ ] Familiarize yourself with the [release team and process](https://github.com/kubernetes/sig-release/tree/master/release-team)
 
-- Which enhancements we'll be tracking for this release
+#### Slack & Messaging
+
+- [ ] Join `#sig-release` and introduce yourself as Docs Lead for [future release]
+- [ ] Send DM to Release Lead introducing yourself
+- [ ] Join `#sig-docs` channel
+- [ ] Join `#release-docs` channel
+
+#### Google Groups
+
+| Google Group | PR Required? | Where to Add |
+|--------------|--------------|--------------|
+| [kubernetes-sig-release](https://groups.google.com/forum/#!forum/kubernetes-sig-release) | No | Direct join |
+| [kubernetes-sig-docs](https://groups.google.com/forum/#!forum/kubernetes-sig-docs) | No | Direct join |
+| [kubernetes-dev](https://groups.google.com/a/kubernetes.io/g/dev) | No | Direct join |
+| [kubernetes-release-team](https://groups.google.com/a/kubernetes.io/g/release-team) | **Yes** | List of members for this group is managed in git. Please create a PR against `kuberenetes/sig-release` repo to include your email under `release-team` group in [`sig-release/groups.yaml`](https://github.com/kubernetes/k8s.io/blob/main/groups/sig-release/groups.yaml) |
+| [kubernetes-release-team-shadows](https://groups.google.com/a/kubernetes.io/g/release-team-shadows) | **Yes** | List of members for this group is managed in git. Please create a PR against `kuberenetes/sig-release` repo to include your email under `release-team-shadows` group in [`sig-release/groups.yaml`](https://github.com/kubernetes/k8s.io/blob/main/groups/sig-release/groups.yaml) |
+
+#### Enhancement Tracking Setup
+
+Early in the release cycle, the Enhancements Lead opens a GitHub Project, e.g., [the 1.26 Enhancement Tracking](https://github.com/orgs/kubernetes/projects/98/views/1). Later in the release, this project board will contain important information for the Docs team. Check the Docs view [here](https://github.com/orgs/kubernetes/projects/98/views/6):
+
+- Which enhancements the team will be tracking for this release
 - Feature owners (and their GitHub IDs)
-- Links to docs PRs opened for each enhancement - Docs PR
-- Docs Required? - By default "Needs Docs"
-- PR Doc Status (No PR, Draft PR, Ready-for-Review PR, Merged PR)
+- Links to docs PRs opened for each enhancement
+- Docs requirement status (default: "Needs Docs")
+- PR documentation status (No PR, Draft PR, Ready-for-Review PR, Merged PR)
 
-> Note: Until [1.25](https://tinyurl.com/k8s125-enhancements) was used tracking spreadsheet, e.g: [the 1.21 release spreadsheet](http://bit.ly/k8s121-enhancements).
+- [ ] Get edit access to Enhancement Tracking spreadsheet from Enhancements Lead
+  - Example: [1.26 Enhancement Tracking](https://github.com/orgs/kubernetes/projects/98/views/1)
+- [ ] Familiarize yourself with the Docs view of the tracker
 
-⚠️ Tasks to DO:
+> [!Important]
+> Until [1.25](https://tinyurl.com/k8s125-enhancements), a tracking spreadsheet was used. e.g.: [the 1.21 release spreadsheet](http://bit.ly/k8s121-enhancements).
+
+### 1.2 Update Release Team & Access Control
+
+#### Access & Permission Setup
+
 - [ ] Make sure your team is included in the "current" release team file, e.g: [release 1.21](https://github.com/kubernetes/sig-release/blob/master/releases/release-1.21/release-team.md). **If not submit a PR see a sample for 1.21 [here](https://github.com/kubernetes/sig-release/pull/1432)**.
-- [ ] Please create a PR against kubernetes/sig-release repo to include the Team Docs email of this release under release-team group in [sig-release/group.yaml](https://github.com/kubernetes/k8s.io/blob/main/groups/sig-release/groups.yaml)
-- [ ] Open a PR to add the Docs Team in the release-1.xx. For example here is the Release Team of [1.26](https://github.com/kubernetes/sig-release/blob/master/releases/release-1.26/release-team.md)
-- [ ] Open a PR to add yourself (Docs Lead Only) to kubernetes/kubernetes [CHANGELOG OWNERS](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/OWNERS) `approvers` and `reviewers` section.
-
-### Introduce yourself to docs localization teams
-
-- [ ] Create a GitHub discussion in [k/sig-release](https://github.com/kubernetes/sig-release/discussions/) to introduce yourself to the current localization owners and to sync up early on the release timeline, e.g:
-> Title: K8s 1.21 - Formalize docs release strategy with docs localization owners
->
-> Hello :wave:,
-> I'm Rey Lejano, the SIG Release Docs lead for the 1.21 release. I'm opening this discussion to coordinate the docs release (scheduled tentnatively for [April 8, 2021](https://github.com/kubernetes/sig-release/tree/master/releases/release-1.21#timeline) with localization owners.
-> I look forward to working with everyone! Let me know if you have any questions!
-> Thank you! 🙏
->
-> cc: @kubernetes/sig-docs-fr-owners @kubernetes/sig-docs-de-owners @kubernetes/sig-docs-hi-owners @kubernetes/sig-docs-id-owners @kubernetes/sig-docs-ja-owners @kubernetes/sig-docs-ru-owners @kubernetes/sig-docs-pl-owners @kubernetes/sig-docs-ko-owners @kubernetes/sig-docs-pt-owners @kubernetes/sig-docs-es-owners @kubernetes/sig-docs-zh-owners @kubernetes/sig-docs-vi-owners @kubernetes/sig-docs-uk-owners @kubernetes/sig-docs-it-owners
-
-### Attend meetings and provide updates
-
-⚠️  Attend the release team meeting outlined in the current release. If you cannot attend, a Shadow needs to attend in your place.
-⚠️  Attend [SIG Docs meetings](https://github.com/kubernetes/community/tree/master/sig-docs#meetings) to report a status update. 
-If you cannot attend, a Shadow needs to attend in your place and/or update the [SIG Docs meeting notes](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit?usp=sharing) with the information necessary to keep the community informed (e.g. staffing updates, branch syncs, placeholder PR deadlines, etc).
-⚠️ The Docs Lead and Shadows must either attend all release team and SIG Docs meetings or communicate with the team if unable to attend. Every team member should have equal opportunities to provide verbal status updates in the meetings. The Docs Lead must ensure Shadows are well-informed on the status updates that release team and SIG Docs need, while Shadows must actively monitor progress to report on.
-
-- Here is a checklist to guide the weekly status report. 
-
-_Note:_ SIG Docs prefers and welcomes a status of yellow or red on anything that needs attention, has the possiblity to miss deadlines or target dates, or requires follow-up from feature authors and SIGs that you're not receiving.
-
-[ ] Is the integration branch healthy (does not need rebase)?
-
-[ ] Has the weekly branch sync been done? (a lapse in 1-2 branch syncs indicates 'yellow' status, 3 or more lapses should be deemed red)
-
-[ ] Has the PR for the weekly branch sync merged or does it need review? If assistance is needed to resolve merge conflicts, please flag others by communicating on the #release-docs Slack channel
-
-[ ] Is the Release Notes PR open, reviewed, and merged within the deadline?
-
-[ ] Is the Release Notes PR late or blocked?
-
-[ ] A week before the Docs PR Placeholder deadline, have 80% of the enhancements that opted in for docs created a placeholder PR? (anything below 60% opt-in for docs where placeholder PRs are needed should indicate yellow (or red) status, contingent on the amount)
-
-[ ] Three days before the Docs PR Placeholder deadline, have 90% of the enhancements that opted in for docs created a placeholder PR? (anything below 90% of placeholder PRs being created by enhancements opted in for doc are needed should indicate yellow (or red) status, contingent on the amount)
-
-[ ] A week before the Docs Ready for Review deadline, are 80% of the docs PRs ready for review? (anything below 60% should indicate yellow (or red) status, contingent on the amount)
-
-[ ] Three days before the Docs Ready for Review deadline, are 90% of the docs PRs ready for review? (anything below 90% of placeholder PRs being ready for review should indicate yellow (or red) status, contingent on the amount)
-
-[ ] A week before the Docs Complete deadline, have 80% of the docs PRs merged? (anything below 60% should indicate yellow (or red) status, contingent on the amount)
-
-[ ] Three days before the Docs Complete deadline, have 90% of the docs PRs merged? (be sure to mention if you need the help of SIG Docs approvers/reviewers to meet your deadline)
-
-[ ] On the day before any deadline, are there any outstanding items or PRs?
-
-[ ] On the day of any deadline, are there any outstanding items or PRs?
-
-### Read up on the release team
-
-Read this to learn more about the entire [release team and process](https://github.com/kubernetes/sig-release/tree/master/release-team)
-
-### Select Shadows
-
-You will be provided with survey results from people interested working on the release team. If you do not have the results, contact the release lead for more information.
-
-After vetting the volunteers for their roles, role leads should make a final decision on selected shadows with the incoming Release Team Lead. In the past the SIG Docs release team has been between 3-6 members.
-
-⚠️ Beyond meeting the basic requirements and time commitments, a good Shadow is someone who is active in SIG-Docs. Selection priority should go to previous shadows who want to eventually lead a SIG-Docs release. Other than those few guidelines, use your best judgement!
-
-[Link for additional information on shadows](https://github.com/kubernetes/sig-release/blob/master/release-team/release-team-selection.md#shadows)
-
-Verify the shadow selections with the release lead and the emeritus advisor on Slack.
-
-### Contact volunteers
-
-- [ ] Send a Slack message to those that you select, e.g:
-
-> Hey, you're officially on the SIG Docs 1.21 release team as a shadow! Let me know if there's any issues with being a shadow (as far as timing / availability / etc) and feel free to introduce yourself!
->
-> Let me start: [General Introduction about your name, workplace, k8s community involvement, timezone etc]
->
->Ok, on to the business...
->
->We are an inclusive group so if there’s something you’re concerned about, or don’t understand, don’t worry and just ask!
->
-> First off, check out the release team on-boarding guide: https://github.com/kubernetes/sig-release/blob/master/release-team/release-team-onboarding.md
->
->Make sure you join the following Slack channels: #sig-docs, #sig-release, #release-docs
-You'll then want to join these mailing lists if you haven't already:
->- https://groups.google.com/forum/#!forum/kubernetes-sig-release
->- https://groups.google.com/forum/#!forum/kubernetes-sig-docs
->- https://groups.google.com/a/kubernetes.io/g/dev
->
->Access to Google docs and calendar invites are often based on these mailing lists, so it's a good idea to subscribe.
->
->When it comes to contributing and reviewing PRs, you should check out the docs style guide: https://kubernetes.io/docs/contribute/style/style-guide/
->
->We'll go over this in the meeting, but you may also want to take a quick look at the 1.21 release readme. https://github.com/kubernetes/sig-release/blob/master/releases/release-1.21/README.md
->
->Lastly, I'd love to jump on a call to go over the release process with everybody, describe what we'll be doing, and answer any questions. Below is a poll to see what time works best on Friday (if any). As we near the end of the release cycle I will add a regular weekly check-in.
->
->Please select your preferred time(s) Friday: https://doodle.com/<link-removed>
-
-
-⚠️ Please coordinate with Emeritus Adviser for the release before taking this step.
-Send a Slack message to those that you didn't select, e.g:
-
-> Hey, I'm Jim Angel (Docs Lead for SIG Docs). Thanks for your interest in the SIG Docs 1.14 release team!
->
-> The release team for sig-doc shadows has no additional availability, but please stick around help out with some of our other sigs (including sig-docs)!
->
-> How can you help?
-> - Attend the sig release meetings (07 30 AM PST Bi-weekly on Tuesdays - see #sig-release for more info).
-> - SIG-DOCs is always looking for new contributors, please go introduce yourself and we're happy to help! As a bonus, you will be preferred during the next release cycle as opposed to someone not involved with sig-docs.
-     - Slack is full of other great SIGs that could always use your help!
->
-> I am also a resource to reach out to if you have any community questions (there's also #sig-contribex). I started out as a volunteer and now I am part of many Kubernetes sigs and teams.
->
-> Thanks again for your interest and time!
->
-> Jim Angel
-
-
-### Meet with Shadows
-
-Find .5-1 hour of time to meet with shadows and explain the release process. Walk through this entire document and review the flow with them. It helps to set expectations that the mantra is "hurry up and wait" but then it gets very hectic at the end. If you have the ability to, please record the meeting and share it with your Shadows for future review.
-
-1. Add contacts to the shadows release docs, e.g: [https://bit.ly/k8s121-contacts](https://bit.ly/k8s121-contacts)
-    
-### Define schedule
-
-Create a table to track `Release`, `Branch Created Day`, `Week of Release`, `PR Merge Deadline`, `Release Notes Assignee`
-and `Release Notes Reviewer` based on the release timeline. This will serve as an internal schedule and signup sheet for
-the release notes team to follow. The schedule is used to track progress and give status updates during release team meetings. 
-
-### Ensure access is set up
-
-1. As a lead, make sure you are part of the [sig-docs-en-owners](https://github.com/orgs/kubernetes/teams/sig-docs-en-owners).
-
-1. As a lead, open a PR for approval permission in the [OWNERS_ALIASES](https://github.com/kubernetes/website/blob/main/OWNERS_ALIASES), e.g: [1.21 release](https://github.com/kubernetes/website/pull/26114).
-
-1. Add docs team to the `website-milestone-maintainers` group in k/org/config/kubernetes/sig-docs/teams.yaml and `release-team` group in k/org/kubernetes/sig-release/teams.yaml, e.g: [1.21 release](https://github.com/kubernetes/org/pull/2445).
-
-1. Make sure all shadows have edit access to the enhancement spreadsheet. Contact the enhancements lead to grant access for you and shadows.
-
-1. You need push access to the Kubernetes website repo (contact a SIG Docs chair if you don't have it)
-
+- [ ] Make sure you are included in the `k/sig-release` release team group [sig-release/group.yaml](https://github.com/kubernetes/k8s.io/blob/main/groups/sig-release/groups.yaml)
+  - Example: [v1.35 PR to update release team groups](https://github.com/kubernetes/k8s.io/pull/8498)
+- [ ] Please create a PR against `k/sig-release` repo to include the email ids of the Docs Team member of this release under release-team group in [sig-release/group.yaml](https://github.com/kubernetes/k8s.io/blob/main/groups/sig-release/groups.yaml).
+  - Example: [v1.35 Docs Shadows PR](https://github.com/kubernetes/k8s.io/pull/8585)
+- [ ] Open a PR to add the Docs Team in the `release-[future release]`. Here is an example of the [v1.35 Release Team](https://github.com/Urvashi0109/sig-release/blob/558161ffcdd2791543a233bd19f88b9e62b06cd8/releases/release-1.35/release-team.md).
+  - Example PR: [v1.35 Docs Shadows PR](https://github.com/kubernetes/sig-release/pull/2875)
+- [ ] Open a PR to add yourself (Docs Lead Only) to `k/k` [CHANGELOG OWNERS](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/OWNERS) `approvers` and `reviewers` section.
+- [ ] Make sure you are part of the [sig-docs-en-owners](https://github.com/orgs/kubernetes/teams/sig-docs-en-owners).
+- [ ] Open a PR for approval permission in the [OWNERS_ALIASES](https://github.com/kubernetes/website/blob/main/OWNERS_ALIASES)
+  - Example PR: [v1.21 release](https://github.com/kubernetes/website/pull/26114).
+- [ ] Add docs team to the `website-milestone-maintainers` group in k/org/config/kubernetes/sig-docs/teams.yaml and `release-team` group in k/org/kubernetes/sig-release/teams.yaml.
+  - Example PR: [v1.21 release](https://github.com/kubernetes/org/pull/2445).
+- [ ] You need push access to the Kubernetes website repo (contact a SIG Docs chair if you don't have it).
    ⚠️ (**This should be done by the Docs Lead**) Open the [integration branch] by creating a pull request against `main` referencing the `dev-[future release]` branch e.g., the [Release 1.21](https://github.com/kubernetes/website/pull/26153) PR uses the branch `dev-1.21`.
 
    This release pull request (also known as the [integration branch]) serves as the base for individual, component enhancement PRs of the release. A [integration branch] lets you bundle and merge multiple PRs simultaneously.
 
    ⚠️ Add the label `do-not-merge/hold` to the PR.
+- [ ] First PR in `dev-[future release]`: Update hugo.toml to show `[future release]` as the current version and add the `[future release]` entry to the drop-down. The intent is that your new branch should be showing as the current version IN the new branch.
+  - Example PR: [v1.27 Updated hugo.toml](https://github.com/kubernetes/website/pull/40231)
 
-1. First PR in `dev-[future release]`: Update hugo.toml to show `[future release]` as the current version and add the `[future release]` entry to the drop-down, e.g: [hugo.toml diff](https://github.com/kubernetes/website/pull/40231)
+### 1.3 Introduce Yourself to Localization Teams
 
-    The intent is that your new branch should be showing as the current version IN the new branch...
+- [ ] Create GitHub discussion in [k/sig-release](https://github.com/kubernetes/sig-release/discussions/) to introduce yourself to the current localization owners and to sync up early on the release timeline.
+
+**Template:**
+```markdown
+Title: K8s [future release] - Formalize docs release strategy with docs localization owners
+
+Hello 👋,
+
+I'm [Your Name], the SIG Release Docs lead for the [future release] release.
+
+I'm opening this discussion to coordinate the docs release (tentatively scheduled for [Release Date]) with localization owners.
+
+Key dates:
+- Docs Freeze: [Date]
+- Release Day: [Date]
+
+I look forward to working with everyone! Let me know if you have any questions!
+
+Thank you! 🙏
+
+cc: @kubernetes/sig-docs-fr-owners @kubernetes/sig-docs-de-owners @kubernetes/sig-docs-hi-owners @kubernetes/sig-docs-id-owners
+@kubernetes/sig-docs-ja-owners @kubernetes/sig-docs-ru-owners @kubernetes/sig-docs-pl-owners @kubernetes/sig-docs-ko-owners
+@kubernetes/sig-docs-pt-owners @kubernetes/sig-docs-es-owners @kubernetes/sig-docs-zh-owners @kubernetes/sig-docs-vi-owners
+@kubernetes/sig-docs-uk-owners @kubernetes/sig-docs-it-owners
+```
+
+### 1.5 Shadow Selection & Onboarding
+
+#### Select Shadows
+
+You will be provided with survey results from people interested working on the release team. If you do not have the results, contact the Release Lead for more information.
+
+After vetting the volunteers for their roles, role leads should make a final decision on selected shadows with the incoming Release Team Lead & Release Team Subproject Lead / Emeritus Advisor. In the past, the SIG Docs release team has been between 3-6 members. Read the following document to know more about the role of [Shadow in the Release Team](https://github.com/kubernetes/sig-release/blob/master/release-team/release-team-selection.md#shadows).
+
+> [!Important]
+> Beyond meeting the basic requirements and time commitments, a good Shadow is someone who is active in SIG-Docs. Selection priority should go to previous shadows who want to eventually lead a SIG-Docs release. Other than those few guidelines, use your best judgement!
+
+#### Contact Selected Shadows
+
+- [ ] Create a Slack Group with the selected shadows and send them a message.
+**Template:**
+```markdown
+Welcome to the Kubernetes v1.35 Docs team! :k8s-heart: Beyond just shipping docs, this is a space for collaboration, growth, and fun. Looking forward to learning from each other and making this journey memorable.:kubernetes-intensifies:
+
+👋 Hi everyone! [Introduce yourself with your name, workplace, k8s community involvement, timezone etc]
+
+I’d love to hear from you all - please introduce yourself so we can all get to know each other. ☺️
+
+We are an inclusive group so if there’s something you’re concerned about, or don’t understand, don’t worry and just ask! Also, do let me know if there's any issues with being a shadow (with respect to timing / availability / etc).
+```
+
+- [ ] Send a Slack message with the first step of onboarding tasks as a shadow.
+**Template:**
+```markdown
+We’ll be collaborating on the v1.35 Docs over the next few months.
+
+Our team includes both returning & new members, so feel free to ask questions and support one another whenever possible. During this cycle, we’ll be working on tasks such as:
+- Creating and reviewing release notes PRs.
+- Syncing the main branch with the development branch.
+- Reaching out to KEPs to raise placeholder Doc PRs.
+- Providing status updates during weekly release team meetings and bi-weekly SIG-Docs meetings.
+
+I’ll walk you through these tasks during our onboarding call.🤜🤛
+
+**Action items (React to this post with a :white_check_mark: once you’ve completed the items)**:
+- Onboarding: Make sure to complete the [onboarding guide](https://github.com/kubernetes/sig-release/blob/master/release-team/release-team-onboarding.md#new-members)
+  - Some onboarding specifics for new members:
+    - Review the [Community Guidelines](https://github.com/kubernetes/community/blob/master/community-membership.md).
+    - Sign the [CLA](https://github.com/kubernetes/community/blob/master/community-membership.md).
+    - Apply to become an **org member** (`kubernetes` and `kubernetes-sigs`) by [creating an issue](https://github.com/kubernetes/org/issues/new?assignees=&labels=area%2Fgithub-membership&template=membership.yml&title=REQUEST%3A+New+membership+for+%3Cyour-GH-handle%3E) ( use @[Release Team Subproject Lead / Emeritus Advisor] @[Release Lead] as your sponsors)
+        - Example PR: https://github.com/kubernetes/org/issues/5626
+  - Join the appropriate slack channels #release-notes #sig-release #release-management #release-docs #release-comms
+  - Subscribe to the [Release Google Calendar](https://bit.ly/k8s-release-cal) and join the [release-team](https://groups.google.com/a/kubernetes.io/g/release-team) and [sig-release](https://groups.google.com/forum/#!forum/kubernetes-sig-release) Google Groups.
+  - When it comes to contributing and reviewing PRs, you should check out the docs style guide: https://kubernetes.io/docs/contribute/style/style-guide/
+  - Docs Handbook: Review the [Docs-Handbook](https://github.com/kubernetes/sig-release/tree/master/release-team/role-handbooks/docs) to get an idea of what to expect with the role.
+
+**Resources**:
+- Know your Timelines: [Release Timeline](https://github.com/kubernetes/sig-release/blob/master/releases/release-[future-release]/README.md) to keep track of where we are in the cycle and what is expected at each interval, especially the Docs deadlines as they’ll be crucial for our team. I will also provide updates and reminders as we progress.
+
+**Meetings**:
+- Shadow Onboarding Meeting: I'd love to jump on a call to go over the release process with everybody, describe what we'll be doing, and answer any questions. Below is a poll to see what time works best for everyone. As we near the end of the release cycle I will add a regular weekly check-in. Please select your preferred time(s): [include the Doodle Link]
+```
+
+### 1.6 Shadow Onboarding Meeting
+
+**Duration:** 30-60 minutes
+**Record:** Yes, share with team for reference
+
+**Action Items:**
+- [ ] Schedule meeting using poll results
+- [ ] Create meeting agenda
+- [ ] Record session.
+- [ ] Share recording and slides (if any) with team.
+
+**Agenda:**
+1. Introductions (5-10 min)
+1. Release process overview (15-20 min)
+1. Walk through this timeline document (15-20 min)
+1. Q&A (10-15 min)
+1. Set expectation that the mantra is "Hurry up & Wait" - but it does get hectic in the last few weeks.
+
+### 1.7 Responsibilities Sign up Sheet
+
+Create a table to track `Release`, `Branch Created Day`, `Week of Release`, `PR Merge Deadline`, `Release Notes Assignee`
+and `Release Notes Reviewer` based on the release timeline. This will serve as an internal schedule and signup sheet for
+the release notes team to follow. The schedule is used to track progress and give status updates during release team meetings.
 
 ### Update the website configuration ahead of the release
 
@@ -384,7 +384,7 @@ Example notice:
 > Thanks! Important dates for v1.21: https://github.com/kubernetes/sig-release/blob/master/releases/release-1.21/README.md#tldr
 >
 > ![Bring out your docs](pics/meme-deadline.jpg)
-    
+
 ### Begin generating Release Notes
 Begin running release-notes tool for the ongoing collection of release notes with the first alpha release, which has been cut directly after the latest minor.
 
@@ -487,7 +487,7 @@ Example:
 
 >Hello {doc/KEP owners} 👋! I'm reaching out from the Docs team.
 Just checking in as we approach **Docs Freeze on {date with timezone}**.
-This documentation appears to still be under review. To meet the Docs Freeze, this PR must have a technical review as well as `lgtm` and `approve` labels applied, without any unaddressed comments or concerns from SIG Docs. 
+This documentation appears to still be under review. To meet the Docs Freeze, this PR must have a technical review as well as `lgtm` and `approve` labels applied, without any unaddressed comments or concerns from SIG Docs.
 The status of this enhancement is marked as `at risk for docs freeze`. Thank you!
 
 
@@ -542,9 +542,9 @@ e.g. [Merge main into future release](https://github.com/kubernetes/website/pull
 
 ⚠️  **Ensure the PR is passing tests on GitHub**.
 
-Perform merge activity on a regular basis to ensure a smooth release. eg: once/week during intial weeks and increase the frequency if required closer to the end of the release cycle. 
+Perform merge activity on a regular basis to ensure a smooth release. eg: once/week during intial weeks and increase the frequency if required closer to the end of the release cycle.
 
-Report out the `dev-[future release]` branch health in Release Team meetings and sig-docs meetings. 
+Report out the `dev-[future release]` branch health in Release Team meetings and sig-docs meetings.
 
 ### Monitor PRs
 
@@ -635,7 +635,7 @@ The Kubernetes API reference, kubectl, and components documentation are generate
 Validate that SIG Cluster Lifecycle has all of the docs in place for the upcoming release. These are mainly kubeadm docs (upgrading, installing, changes, etc). If unsure, send a message to their [Slack](https://kubernetes.slack.com/messages/sig-cluster-lifecycle/) channel, e.g:
 
 > Hi SIG Cluster Lifecylce :wave:  1.21 Docs Lead here, can someone confirm that all docs are in place for the upcoming 1.21 release?
-    
+
 ### Clean up and edit the final Release Notes
 
 The confirmed release notes are cleaned up and copy edited by the Docs team to ensure uniform language/style is used. The team must make sure that the final document conforms to the [Documentation Style Guide](https://kubernetes.io/docs/contribute/style/style-guide/).
@@ -709,7 +709,7 @@ git checkout -b update-release-1.27-hugo.toml
 git add .
 git commit -m "Updates v1.27 hugo.toml for release v1.29"
 git push origin update-release-1.27-hugo.toml
-In this case, a PR is submitted against `release-1.27` from the fork's branch `update-release-1.27-hugo.toml`. 
+In this case, a PR is submitted against `release-1.27` from the fork's branch `update-release-1.27-hugo.toml`.
 ```
 
 ⚠️  DO NOT MERGE **ANY** OF THE CONFIGURATION PULL REQUESTS UNTIL THE RELEASE HAS OCCURRED
@@ -829,7 +829,7 @@ Review milestone for completion and outstanding PRs. For PRs that won't make the
 This process takes approximately 4 hours.
 
 Coordinate with the Release Team for the exact timing. Typically the release is 'officially' built, then you merge the docs, and then you approve the blog post to "make it official". For 1.21, we merged docs at 11:00 am PDT and the blog was merged at 11:30 am PDT - marking the release "complete".
-    
+
 ### Publish final Release Notes
 
 - Final version of release notes committed for release
@@ -889,7 +889,7 @@ git show <merge commit of integration branch>^1
 The following example is from the 1.21 release:
   - It was noted that the last commit hash of the `release-1.20` branch is 6d252624b21452bcf6c22f156cccd316111204d4 from PR 2738
   - The commit hash of the integration branch merge, which is the first commit of 1.21, is 969a3db92326746a94e2eb4449fd60f25d9151b8.
-```shell 
+```shell
 git show 969a3db92326746a94e2eb4449fd60f25d9151b8^1
 
 commit 6d252624b21452bcf6c22f156cccd316111204d4 (origin/release-1.20)
@@ -898,7 +898,7 @@ Author: Kubernetes Prow Robot <k8s-ci-robot@users.noreply.github.com>
 Date:   Wed Apr 7 07:53:53 2021 -0700
 
     Merge pull request #27387 from Arhell/label
-    
+
     [ja] updated labels for cli command in the PHP Guestbook tutorial
 ```
 Proceed with tagging the commit hashes:
@@ -1009,7 +1009,7 @@ e.g., [Remove 1.21 shadows from sig docs teams](https://github.com/kubernetes/or
   - The current lead must stay in the website milestone maintainers list until the `[current release]` website version is officially supported.
   - The future lead must stay in the website milestone maintainers list to prepare for the next release.
 - ⚠️  Create a PR against the **[kubernetes/website](https://github.com/kubernetes/website) repo** to **remove** the current Docs Lead from [sig-docs-en-owners](https://github.com/orgs/kubernetes/teams/sig-docs-en-owners)
-  
+
 
 ## Celebrate!
 YOU MADE IT! 🎉 Celebrate a job well done, keep an eye out for anything on fire, and begin to relax!
