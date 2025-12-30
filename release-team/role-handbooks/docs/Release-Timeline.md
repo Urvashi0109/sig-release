@@ -211,73 +211,24 @@ cc: @kubernetes/sig-docs-fr-owners @kubernetes/sig-docs-de-owners @kubernetes/si
 #### Meeting Requirements
 
 ⚠️ **Mandatory Attendance**: Either the Docs Lead or a Shadow must attend these meetings:
-- **Release Team meetings** (weekly) - Provide status updates on docs progress
-- **SIG Docs meetings** (bi-weekly) - Report release-related updates to the community
+- **Release Team meetings** (weekly)
+- **SIG Docs meetings** (bi-weekly)
 
 If you cannot attend, ensure a Shadow attends in your place or updates the meeting notes with relevant information (staffing updates, branch syncs, placeholder PR deadlines, etc.).
 
-**Best Practice**: Rotate meeting attendance among team members to give everyone equal opportunities to provide verbal status updates.
-
 #### Status Reporting Guide
 
-Report status as **Green**, **Yellow**, or **Red** based on the criteria below. SIG Docs encourages marking status as Yellow or Red when issues need attention—don't wait until problems become critical.
+Report status as **Green🟢**, **Yellow**🟡, or **Red🔴** based on the criteria below. SIG Docs encourages marking status as Yellow or Red when issues need attention—don't wait until problems become critical.
 
-##### Branch Health & Syncs
+##### Status Criteria Reference
 
-**Integration Branch:**
-- Healthy (no rebase needed) → Green
-- Needs rebase or has conflicts → Yellow/Red
-
-**Weekly Branch Syncs:**
-- Completed on time → Green
-- 1-2 syncs missed → Yellow
-- 3+ syncs missed → Red
-- Sync PR needs review or has merge conflicts → Yellow (mention in #release-docs if help needed)
-
-**Release Notes:**
-- PR open, reviewed, and merged on time → Green
-- PR late or blocked → Red
-
-##### Placeholder PR Deadlines
-
-**1 week before deadline:**
-- 80%+ enhancements have placeholder PRs → Green
-- 60-79% have placeholder PRs → Yellow
-- <60% have placeholder PRs → Red
-
-**3 days before deadline:**
-- 90%+ enhancements have placeholder PRs → Green
-- <90% have placeholder PRs → Yellow/Red
-
-##### Ready for Review Deadlines
-
-**1 week before deadline:**
-- 80%+ docs PRs ready for review → Green
-- 60-79% ready for review → Yellow
-- <60% ready for review → Red
-
-**3 days before deadline:**
-- 90%+ docs PRs ready for review → Green
-- <90% ready for review → Yellow/Red
-
-##### Docs Complete (Merged) Deadlines
-
-**1 week before deadline:**
-- 80%+ docs PRs merged → Green
-- 60-79% merged → Yellow
-- <60% merged → Red
-
-**3 days before deadline:**
-- 90%+ docs PRs merged → Green
-- <90% merged → Yellow/Red (mention if SIG Docs approver/reviewer help needed)
-
-##### Critical Deadline Days
-
-**Day before any deadline:**
-- Outstanding items/PRs exist → Yellow/Red (list specific blockers)
-
-**Day of any deadline:**
-- Outstanding items/PRs exist → Red (requires immediate attention)
+| Category | Criteria |
+|----------|----------|
+| **Branch Health & Syncs** | - Integration Branch healthy (no rebase needed) → `Green`<br>- Integration Branch needs rebase or has conflicts → `Yellow/Red`<br>- Weekly branch syncs completed on time → `Green`<br>- 1-2 syncs missed → `Yellow`<br>- 3+ syncs missed → `Red`<br>- Sync PR needs review or has merge conflicts → `Yellow` (mention in #release-docs if help needed)<br>- Release Notes PR open, reviewed, and merged on time → `Green`<br>- Release Notes PR late or blocked → `Red` |
+| **Placeholder PR Deadlines** | **1 week before:**<br>- 80%+ enhancements have placeholder PRs → `Green`<br>- 60-79% have placeholder PRs → `Yellow`<br>- <60% have placeholder PRs → `Red`<br><br>**3 days before:**<br>- 90%+ enhancements have placeholder PRs → `Green`<br>- <90% have placeholder PRs → `Yellow/Red` |
+| **Ready for Review Deadlines** | **1 week before:**<br>- 80%+ docs PRs ready for review → `Green`<br>- 60-79% ready for review → `Yellow`<br>- <60% ready for review → `Red`<br><br>**3 days before:**<br>- 90%+ docs PRs ready for review → `Green`<br>- <90% ready for review → `Yellow/Red` |
+| **Docs Complete (Merged) Deadlines** | **1 week before:**<br>- 80%+ docs PRs merged → `Green`<br>- 60-79% merged → `Yellow`<br>- <60% merged → `Red`<br><br>**3 days before:**<br>- 90%+ docs PRs merged → `Green`<br>- <90% merged → `Yellow/Red` (mention if SIG Docs approver/reviewer help needed) |
+| **Critical Deadline Days** | - Day before any deadline: Outstanding items/PRs exist → `Yellow/Red` (list specific blockers)<br>- Day of any deadline: Outstanding items/PRs exist → `Red` (requires immediate attention) |
 
 #### Reporting Tips
 - Be specific about blockers (e.g., "5 PRs need technical review from SIG Network")
@@ -359,61 +310,13 @@ I’ll walk you through these tasks during our onboarding call.🤜🤛
 1. Q&A (10-15 min)
 1. Set expectation that the mantra is "Hurry up & Wait" - but it does get hectic in the last few weeks.
 
-### 1.7 Responsibilities Sign up Sheet
-> **Note:** This is a optional but recommended practice that proved valuable in recent releases.
+### 1.7 Team Responsibility Tracker
 
-#### Purpose
+> **Note:** This is an optional but recommended practice that proved valuable in recent releases.
 
-A responsibility tracker (spreadsheet or document) helps the Docs team distribute work and avoid confusion during the release cycle.
+A responsibility tracker (spreadsheet or document) helps the Docs team distribute work fairly and avoid confusion during the release cycle. Create a shared spreadsheet to track releases, weekly branch sync PRs, PR merge deadlines, release notes assignees, and reviewers. Team members can self-assign tasks, ensuring clear ownership and proactive planning. This serves as an internal schedule for tracking progress and providing status updates during release team and SIG Docs meetings.
 
-#### Recommended Structure
-
-Create a shared spreadsheet with separate sheets/tabs for different responsibility categories. Team members can self-assign by adding their names to the assignee columns.
-
-##### Sheet 1: Weekly Branch Sync PRs
-
-Track weekly branch syncs (merging `main` into `dev-[future release]`, typically done every Friday).
-
-| Date | Assignee |
-|------|----------|
-| 2024-01-05 | |
-| 2024-01-12 | |
-| 2024-01-19 | |
-
-##### Sheet 2: Release Notes
-
-Track release notes creation and review for each release.
-
-| Release | Branch Creation Date | PR Merge Deadline | Release Notes Assignee | Release Notes Reviewer |
-|---------|---------------------|-------------------|----------------------|----------------------|
-| v1.35.0-alpha.1 | | | | |
-| v1.35.0-beta.0 | | | | |
-| v1.35.0-rc.0 | | | | |
-
-##### Sheet 3: Release Team Meeting Updates
-
-Track who provides status updates at weekly Release Team meetings (typically held in two time zones).
-
-| Date | APAC Meeting - Assignee | EMEA Meeting - Assignee |
-|------|------------------------|------------------------|
-| 2024-01-08 | | |
-| 2024-01-15 | | |
-| 2024-01-22 | | |
-
-##### Sheet 4: SIG Docs Meeting Updates
-
-Track who provides status updates at bi-weekly SIG Docs meetings.
-
-| Date | Assignee |
-|------|----------|
-| 2024-01-10 | |
-| 2024-01-24 | |
-| 2024-02-07 | |
-
-#### Implementation Tips
-
-- Share the tracker early in the release cycle during shadow onboarding
-- Encourage team members to sign up 1-2 weeks in advance
+**Example:** [Docs Team Responsibility Sheet](https://docs.google.com/spreadsheets/d/1bij8ayB_yf8mPic1upcf13N5yHRF7HguIoYXLvU1Mss/edit?usp=sharing)
 
 ### Update the website configuration ahead of the release
 
