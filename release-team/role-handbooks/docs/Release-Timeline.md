@@ -218,7 +218,7 @@ If you cannot attend, ensure a Shadow attends in your place or updates the meeti
 
 #### Status Reporting Guide
 
-Report status as **Green🟢**, **Yellow**🟡, or **Red🔴** based on the criteria below. SIG Docs encourages marking status as Yellow or Red when issues need attention—don't wait until problems become critical.
+Report status as **Green🟢**, **Yellow🟡**, or **Red🔴** based on the criteria below. SIG Docs encourages marking status as Yellow or Red when issues need attention—don't wait until problems become critical.
 
 ##### Status Criteria Reference
 
