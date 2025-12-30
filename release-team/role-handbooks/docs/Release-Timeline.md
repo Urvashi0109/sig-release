@@ -120,6 +120,9 @@ Responsibilities of the Docs Team:
 - [ ] Send DM to Release Lead introducing yourself
 - [ ] Join `#sig-docs` channel
 - [ ] Join `#release-docs` channel
+- [ ] Join `#release-management` channel
+- [ ] Join `#release-notes` channel
+- [ ] Join `#chairs-and-techleads` channel (Note: This channel is particularly helpful as the Doc Team approaches Doc Freeze, as members here can help with `lgtm` on Doc PRs)
 
 #### Google Groups
 
@@ -128,8 +131,8 @@ Responsibilities of the Docs Team:
 | [kubernetes-sig-release](https://groups.google.com/forum/#!forum/kubernetes-sig-release) | No | Direct join |
 | [kubernetes-sig-docs](https://groups.google.com/forum/#!forum/kubernetes-sig-docs) | No | Direct join |
 | [kubernetes-dev](https://groups.google.com/a/kubernetes.io/g/dev) | No | Direct join |
-| [kubernetes-release-team](https://groups.google.com/a/kubernetes.io/g/release-team) | **Yes** | List of members for this group is managed in git. Please create a PR against `kuberenetes/sig-release` repo to include your email under `release-team` group in [`sig-release/groups.yaml`](https://github.com/kubernetes/k8s.io/blob/main/groups/sig-release/groups.yaml) |
-| [kubernetes-release-team-shadows](https://groups.google.com/a/kubernetes.io/g/release-team-shadows) | **Yes** | List of members for this group is managed in git. Please create a PR against `kuberenetes/sig-release` repo to include your email under `release-team-shadows` group in [`sig-release/groups.yaml`](https://github.com/kubernetes/k8s.io/blob/main/groups/sig-release/groups.yaml) |
+| [kubernetes-release-team](https://groups.google.com/a/kubernetes.io/g/release-team) | **Yes** | List of members for this group is managed in git. Please create a PR against `kuberenetes/sig-release` repo to include your email under `release-team` group in [`sig-release/groups.yaml`](https://github.com/kubernetes/k8s.io/blob/main/groups/sig-release/groups.yaml)<br>Example PRs: [k8s.io/pull/7713](https://github.com/kubernetes/k8s.io/pull/7713), [k8s.io/pull/8585](https://github.com/kubernetes/k8s.io/pull/8585) |
+| [kubernetes-release-team-shadows](https://groups.google.com/a/kubernetes.io/g/release-team-shadows) | **Yes** | List of members for this group is managed in git. Please create a PR against `kuberenetes/sig-release` repo to include your email under `release-team-shadows` group in [`sig-release/groups.yaml`](https://github.com/kubernetes/k8s.io/blob/main/groups/sig-release/groups.yaml)<br>Example PRs: [k8s.io/pull/7713](https://github.com/kubernetes/k8s.io/pull/7713), [k8s.io/pull/8585](https://github.com/kubernetes/k8s.io/pull/8585) |
 
 #### Enhancement Tracking Setup
 
@@ -161,16 +164,17 @@ Early in the release cycle, the Enhancements Lead opens a GitHub Project, e.g., 
   - Example PR: [v1.35 Docs Shadows PR](https://github.com/kubernetes/sig-release/pull/2875)
 - [ ] Open a PR to add yourself (Docs Lead Only) to `k/k` [CHANGELOG OWNERS](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/OWNERS) `approvers` and `reviewers` section.
 - [ ] Make sure you are part of the [sig-docs-en-owners](https://github.com/orgs/kubernetes/teams/sig-docs-en-owners).
+  - Reference PRs: [kubernetes/website/pull/44709](https://github.com/kubernetes/website/pull/44709), [kubernetes/website/pull/52585](https://github.com/kubernetes/website/pull/52585)
 - [ ] Open a PR for approval permission in the [OWNERS_ALIASES](https://github.com/kubernetes/website/blob/main/OWNERS_ALIASES)
   - Example PR: [v1.21 release](https://github.com/kubernetes/website/pull/26114).
 - [ ] Add docs team to the `website-milestone-maintainers` group in k/org/config/kubernetes/sig-docs/teams.yaml and `release-team` group in k/org/kubernetes/sig-release/teams.yaml.
   - Example PR: [v1.21 release](https://github.com/kubernetes/org/pull/2445).
-- [ ] You need push access to the Kubernetes website repo (contact a SIG Docs chair if you don't have it).
-   ⚠️ (**This should be done by the Docs Lead**) Open the [integration branch] by creating a pull request against `main` referencing the `dev-[future release]` branch e.g., the [Release 1.21](https://github.com/kubernetes/website/pull/26153) PR uses the branch `dev-1.21`.
+- [ ] ⚠️ **Integration Branch Setup (Docs Lead responsibility)**: You need push access to the Kubernetes website repo (contact a SIG Docs chair if you don't have it). Open the [integration branch] by creating a pull request titled `Official [future release] Release Docs` against `main` referencing the `dev-[future release]` branch.
+  - Reference PRs: [kubernetes/website/pull/52613](https://github.com/kubernetes/website/pull/52613), [kubernetes/website/pull/50589](https://github.com/kubernetes/website/pull/50589)
+  
+  This release pull request (also known as the [integration branch]) serves as the base for individual, component enhancement PRs of the release. An [integration branch] lets you bundle and merge multiple PRs simultaneously.
 
-   This release pull request (also known as the [integration branch]) serves as the base for individual, component enhancement PRs of the release. A [integration branch] lets you bundle and merge multiple PRs simultaneously.
-
-   ⚠️ Add the label `do-not-merge/hold` to the PR.
+  ⚠️ Add the label `do-not-merge/hold` to the PR.
 - [ ] First PR in `dev-[future release]`: Update hugo.toml to show `[future release]` as the current version and add the `[future release]` entry to the drop-down. The intent is that your new branch should be showing as the current version IN the new branch.
   - Example PR: [v1.27 Updated hugo.toml](https://github.com/kubernetes/website/pull/40231)
 
@@ -201,6 +205,84 @@ cc: @kubernetes/sig-docs-fr-owners @kubernetes/sig-docs-de-owners @kubernetes/si
 @kubernetes/sig-docs-pt-owners @kubernetes/sig-docs-es-owners @kubernetes/sig-docs-zh-owners @kubernetes/sig-docs-vi-owners
 @kubernetes/sig-docs-uk-owners @kubernetes/sig-docs-it-owners
 ```
+
+### 1.4 Attend Meetings and Provide Updates
+
+#### Meeting Requirements
+
+⚠️ **Mandatory Attendance**: Either the Docs Lead or a Shadow must attend these meetings:
+- **Release Team meetings** (weekly) - Provide status updates on docs progress
+- **SIG Docs meetings** (bi-weekly) - Report release-related updates to the community
+
+If you cannot attend, ensure a Shadow attends in your place or updates the meeting notes with relevant information (staffing updates, branch syncs, placeholder PR deadlines, etc.).
+
+**Best Practice**: Rotate meeting attendance among team members to give everyone equal opportunities to provide verbal status updates.
+
+#### Status Reporting Guide
+
+Report status as **Green**, **Yellow**, or **Red** based on the criteria below. SIG Docs encourages marking status as Yellow or Red when issues need attention—don't wait until problems become critical.
+
+##### Branch Health & Syncs
+
+**Integration Branch:**
+- Healthy (no rebase needed) → Green
+- Needs rebase or has conflicts → Yellow/Red
+
+**Weekly Branch Syncs:**
+- Completed on time → Green
+- 1-2 syncs missed → Yellow
+- 3+ syncs missed → Red
+- Sync PR needs review or has merge conflicts → Yellow (mention in #release-docs if help needed)
+
+**Release Notes:**
+- PR open, reviewed, and merged on time → Green
+- PR late or blocked → Red
+
+##### Placeholder PR Deadlines
+
+**1 week before deadline:**
+- 80%+ enhancements have placeholder PRs → Green
+- 60-79% have placeholder PRs → Yellow
+- <60% have placeholder PRs → Red
+
+**3 days before deadline:**
+- 90%+ enhancements have placeholder PRs → Green
+- <90% have placeholder PRs → Yellow/Red
+
+##### Ready for Review Deadlines
+
+**1 week before deadline:**
+- 80%+ docs PRs ready for review → Green
+- 60-79% ready for review → Yellow
+- <60% ready for review → Red
+
+**3 days before deadline:**
+- 90%+ docs PRs ready for review → Green
+- <90% ready for review → Yellow/Red
+
+##### Docs Complete (Merged) Deadlines
+
+**1 week before deadline:**
+- 80%+ docs PRs merged → Green
+- 60-79% merged → Yellow
+- <60% merged → Red
+
+**3 days before deadline:**
+- 90%+ docs PRs merged → Green
+- <90% merged → Yellow/Red (mention if SIG Docs approver/reviewer help needed)
+
+##### Critical Deadline Days
+
+**Day before any deadline:**
+- Outstanding items/PRs exist → Yellow/Red (list specific blockers)
+
+**Day of any deadline:**
+- Outstanding items/PRs exist → Red (requires immediate attention)
+
+#### Reporting Tips
+- Be specific about blockers (e.g., "5 PRs need technical review from SIG Network")
+- Highlight assistance needed from other SIGs
+- Mark Yellow/Red proactively—it helps the community prioritize support
 
 ### 1.5 Shadow Selection & Onboarding
 
@@ -278,10 +360,60 @@ I’ll walk you through these tasks during our onboarding call.🤜🤛
 1. Set expectation that the mantra is "Hurry up & Wait" - but it does get hectic in the last few weeks.
 
 ### 1.7 Responsibilities Sign up Sheet
+> **Note:** This is a optional but recommended practice that proved valuable in recent releases.
 
-Create a table to track `Release`, `Branch Created Day`, `Week of Release`, `PR Merge Deadline`, `Release Notes Assignee`
-and `Release Notes Reviewer` based on the release timeline. This will serve as an internal schedule and signup sheet for
-the release notes team to follow. The schedule is used to track progress and give status updates during release team meetings.
+#### Purpose
+
+A responsibility tracker (spreadsheet or document) helps the Docs team distribute work and avoid confusion during the release cycle.
+
+#### Recommended Structure
+
+Create a shared spreadsheet with separate sheets/tabs for different responsibility categories. Team members can self-assign by adding their names to the assignee columns.
+
+##### Sheet 1: Weekly Branch Sync PRs
+
+Track weekly branch syncs (merging `main` into `dev-[future release]`, typically done every Friday).
+
+| Date | Assignee |
+|------|----------|
+| 2024-01-05 | |
+| 2024-01-12 | |
+| 2024-01-19 | |
+
+##### Sheet 2: Release Notes
+
+Track release notes creation and review for each release.
+
+| Release | Branch Creation Date | PR Merge Deadline | Release Notes Assignee | Release Notes Reviewer |
+|---------|---------------------|-------------------|----------------------|----------------------|
+| v1.35.0-alpha.1 | | | | |
+| v1.35.0-beta.0 | | | | |
+| v1.35.0-rc.0 | | | | |
+
+##### Sheet 3: Release Team Meeting Updates
+
+Track who provides status updates at weekly Release Team meetings (typically held in two time zones).
+
+| Date | APAC Meeting - Assignee | EMEA Meeting - Assignee |
+|------|------------------------|------------------------|
+| 2024-01-08 | | |
+| 2024-01-15 | | |
+| 2024-01-22 | | |
+
+##### Sheet 4: SIG Docs Meeting Updates
+
+Track who provides status updates at bi-weekly SIG Docs meetings.
+
+| Date | Assignee |
+|------|----------|
+| 2024-01-10 | |
+| 2024-01-24 | |
+| 2024-02-07 | |
+
+#### Implementation Tips
+
+- Share the tracker early in the release cycle during shadow onboarding
+- Encourage team members to sign up 1-2 weeks in advance
 
 ### Update the website configuration ahead of the release
 
