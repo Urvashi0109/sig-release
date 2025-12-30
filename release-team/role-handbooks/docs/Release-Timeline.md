@@ -224,11 +224,11 @@ Report status as **Green🟢**, **Yellow**🟡, or **Red🔴** based on the crit
 
 | Category | Criteria |
 |----------|----------|
-| **Branch Health & Syncs** | - Integration Branch healthy (no rebase needed) → `Green`<br>- Integration Branch needs rebase or has conflicts → `Yellow/Red`<br>- Weekly branch syncs completed on time → `Green`<br>- 1-2 syncs missed → `Yellow`<br>- 3+ syncs missed → `Red`<br>- Sync PR needs review or has merge conflicts → `Yellow` (mention in #release-docs if help needed)<br>- Release Notes PR open, reviewed, and merged on time → `Green`<br>- Release Notes PR late or blocked → `Red` |
+| **Branch Health & Syncs** | - Integration Branch healthy (no rebase needed) → `Green`<br>- Integration Branch needs rebase or has conflicts → `Yellow/Red`<br><br>- Weekly branch syncs completed on time → `Green`<br>- 1-2 syncs missed → `Yellow`<br>- 3+ syncs missed → `Red`<br>- Sync PR needs review or has merge conflicts → `Yellow` (mention in #release-docs if help needed)<br><br>- Release Notes PR open, reviewed, and merged on time → `Green`<br>- Release Notes PR late or blocked → `Red` |
 | **Placeholder PR Deadlines** | **1 week before:**<br>- 80%+ enhancements have placeholder PRs → `Green`<br>- 60-79% have placeholder PRs → `Yellow`<br>- <60% have placeholder PRs → `Red`<br><br>**3 days before:**<br>- 90%+ enhancements have placeholder PRs → `Green`<br>- <90% have placeholder PRs → `Yellow/Red` |
 | **Ready for Review Deadlines** | **1 week before:**<br>- 80%+ docs PRs ready for review → `Green`<br>- 60-79% ready for review → `Yellow`<br>- <60% ready for review → `Red`<br><br>**3 days before:**<br>- 90%+ docs PRs ready for review → `Green`<br>- <90% ready for review → `Yellow/Red` |
 | **Docs Complete (Merged) Deadlines** | **1 week before:**<br>- 80%+ docs PRs merged → `Green`<br>- 60-79% merged → `Yellow`<br>- <60% merged → `Red`<br><br>**3 days before:**<br>- 90%+ docs PRs merged → `Green`<br>- <90% merged → `Yellow/Red` (mention if SIG Docs approver/reviewer help needed) |
-| **Critical Deadline Days** | - Day before any deadline: Outstanding items/PRs exist → `Yellow/Red` (list specific blockers)<br>- Day of any deadline: Outstanding items/PRs exist → `Red` (requires immediate attention) |
+| **Critical Deadline Days** | - Day before any deadline: Outstanding items/PRs exist → `Yellow/Red` (list specific blockers)<br>- Day of any deadline: Outstanding items/PRs exist → `Red` (⚠️ requires immediate attention) |
 
 #### Reporting Tips
 - Be specific about blockers (e.g., "5 PRs need technical review from SIG Network")
@@ -314,7 +314,7 @@ I’ll walk you through these tasks during our onboarding call.🤜🤛
 
 > **Note:** This is an optional but recommended practice that proved valuable in recent releases.
 
-A responsibility tracker (spreadsheet or document) helps the Docs team distribute work fairly and avoid confusion during the release cycle. Create a shared spreadsheet to track releases, weekly branch sync PRs, PR merge deadlines, release notes assignees, and reviewers. Team members can self-assign tasks, ensuring clear ownership and proactive planning. This serves as an internal schedule for tracking progress and providing status updates during release team and SIG Docs meetings.
+A responsibility tracker (spreadsheet or document) helps the Docs team distribute work fairly and avoid confusion during the release cycle. Create a shared spreadsheet to track `Release`, `Weekly Branch Sync PR`, `PR merge deadline`, `Release Notes assignee` and `Release Notes reviewer`. Team members can self-assign tasks, ensuring clear ownership and proactive planning. This serves as an internal schedule for tracking progress and providing status updates during release team and SIG Docs meetings.
 
 **Example:** [Docs Team Responsibility Sheet](https://docs.google.com/spreadsheets/d/1bij8ayB_yf8mPic1upcf13N5yHRF7HguIoYXLvU1Mss/edit?usp=sharing)
 
