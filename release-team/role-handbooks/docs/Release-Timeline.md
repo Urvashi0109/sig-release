@@ -170,7 +170,7 @@ Early in the release cycle, the Enhancements Lead opens a GitHub Project, e.g., 
 - [ ] Add docs team to the `website-milestone-maintainers` group in k/org/config/kubernetes/sig-docs/teams.yaml and `release-team` group in k/org/kubernetes/sig-release/teams.yaml.
   - Example PR: [v1.21 release](https://github.com/kubernetes/org/pull/2445).
 - [ ] ⚠️ **Integration Branch Setup (Docs Lead responsibility)**: You need push access to the Kubernetes website repo (contact a SIG Docs chair if you don't have it). Open the [integration branch] by creating a pull request titled `Official [future release] Release Docs` against `main` referencing the `dev-[future release]` branch.
-  - Reference PRs: [kubernetes/website/pull/52613](https://github.com/kubernetes/website/pull/52613), [kubernetes/website/pull/50589](https://github.com/kubernetes/website/pull/50589)
+  - Example PRs: [kubernetes/website/pull/52613](https://github.com/kubernetes/website/pull/52613), [kubernetes/website/pull/50589](https://github.com/kubernetes/website/pull/50589)
   
   This release pull request (also known as the [integration branch]) serves as the base for individual, component enhancement PRs of the release. An [integration branch] lets you bundle and merge multiple PRs simultaneously.
 
